@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <script src="./01.js"></script>
+    <script src="./02.js"></script> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+ <style>
+     body{
+         padding: 80px 150px;
+     }
+     h1{
+         text-align: center;
+     }
+     .container{
+        text-align: center;
+        padding: 50px;
+        background-color: cadetblue;
+     }
+     .input-div{
+         display:inline-block;
+         text-align: center;
+         padding: 10px;
+
+     }
+     .inp{
+         padding: 10px 20px;
+         margin: 10px;
+         text-align: center;
+         font-size: 30px;
+         font-weight: bold;
+         width: 250px;
+         border-radius: 6px ;
+         border: 1.5px solid black;
+     }
+     label{
+         font-size: 20px;
+         font-weight: bold;
+     }
+
+ </style>
+
+
+</head>
+
+<body>
+    <!-- first project in JavaScript -->
+    <h1>Tempereture converter</h1>
+    <div class="container">
+
+        <div class="input-div">
+            <label >Celsius</label><br>
+            <input type="number" class="inp" id="cal" value="0">
+
+        </div>
+
+        <div class="input-div">
+            <label >Fahrenheit</label><br>
+            <input type="number" class="inp" id="fah" value="32">
+
+        </div>
+    </div>
+
+
+    <script>
+    let cal = document.getElementById("cal");
+    let fah = document.getElementById("fah");
+
+    cal.addEventListener("input",function(){
+
+   
+        let c =this.value; 
+        let f =(c * 9/5) + 32;
+
+        if(!Number.isInteger(f)){
+            f = f.toFixed(4);
+        }
+            fah.value = f;
+
+    });
+    fah.addEventListener("input",function(){
+        
+        let f = this.value;
+        let c = (f - 32) * 5/9;
+
+        if(!Number.isInteger(c)){
+            c = c.toFixed(4);
+        }
+        cal.value = c;
+
+
+    });
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
